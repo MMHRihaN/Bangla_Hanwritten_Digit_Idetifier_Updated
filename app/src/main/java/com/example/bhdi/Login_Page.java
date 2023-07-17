@@ -69,7 +69,7 @@ public class Login_Page extends AppCompatActivity {
         SharedPreferences sharedPreferences = getSharedPreferences("login", Context.MODE_PRIVATE);
         boolean isLoggedIn = sharedPreferences.getBoolean("isLoggedin", false);
         if(isLoggedIn){
-            startActivity(new Intent(Login_Page.this, Home_Page.class));
+            startActivity(new Intent(Login_Page.this, Card.class));
         }
 
 
@@ -133,7 +133,7 @@ public class Login_Page extends AppCompatActivity {
                     FirebaseAuth firebaseAuth = FirebaseAuth.getInstance() ;
                     if(firebaseAuth.getCurrentUser().isEmailVerified()) {
                         //Toast.makeText(Login_Page.this, "You are logged in", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(Login_Page.this, Home_Page.class));
+                        startActivity(new Intent(Login_Page.this, Card.class));
                     }
                     else{
                         Toast.makeText(Login_Page.this,"You have not verified your Gmail ID \n Verify Your Gmail ID to Login" , Toast.LENGTH_SHORT).show();
