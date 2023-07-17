@@ -1,5 +1,6 @@
 plugins {
     id 'com.android.application'
+    id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
 }
 
 android {
@@ -133,6 +134,13 @@ dependencies {
     //implementation 'androidx.core:core-ktx:1.6.0'
     implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:{latest-version}'
     implementation "com.airbnb.android:lottie:3.5.0"
+
+    //google maps related
+    implementation 'com.google.android.gms:play-services-location:21.0.1'
+    implementation 'com.google.android.gms:play-services-maps:18.1.0'
+
+    //custom dependencies
+    implementation 'com.karumi:dexter:6.2.1' //location a permission manage korte subhidha kore
 
     // add retrofit dependency
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'

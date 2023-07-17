@@ -33,7 +33,7 @@ public class Card extends AppCompatActivity {
         about = findViewById(R.id.about_me);
 
         blog.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), Post_Page.class)));
-        //map.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), Maps.class)));
+        map.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), MapTextData.class)));
         classify.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), MachineLearning.class)));
         bmi.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), Youtube_Video_Embedded.class)));
         qna.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), RatingApp.class)));

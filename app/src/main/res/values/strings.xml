@@ -81,4 +81,5 @@
         <item>Sunamganj</item>
 
     </string-array>
+    <string name="title_activity_maps_demo">MapsActivityDemo</string>
 </resources>
