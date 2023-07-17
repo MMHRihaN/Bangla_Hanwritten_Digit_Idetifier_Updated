@@ -46,11 +46,11 @@ public class Home_Page extends AppCompatActivity {
             }
         });
 
-//        Post.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                startActivity(new Intent(Home_Page.this, Post_Page.class));
-//            }
-//        });
+        Post.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Home_Page.this, Post_Page.class));
+            }
+        });
     }
 }
