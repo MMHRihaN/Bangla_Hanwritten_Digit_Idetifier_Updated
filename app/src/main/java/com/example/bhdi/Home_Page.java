@@ -16,7 +16,7 @@ public class Home_Page extends AppCompatActivity {
 
 
 
-    Button profile , rating , video , Post  ;
+    Button profile , rating , video , Post, ML  ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +25,7 @@ public class Home_Page extends AppCompatActivity {
         rating = findViewById(R.id.Rating)  ;
         video = findViewById(R.id.Video) ;
         Post = findViewById(R.id.post) ;
+        ML = findViewById(R.id.ML);
 
         rating.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,6 +51,12 @@ public class Home_Page extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(Home_Page.this, Post_Page.class));
+            }
+        });
+        ML.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Home_Page.this, MachineLearning.class));
             }
         });
     }
