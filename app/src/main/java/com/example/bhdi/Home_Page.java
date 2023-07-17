@@ -26,12 +26,12 @@ public class Home_Page extends AppCompatActivity {
         video = findViewById(R.id.Video) ;
         Post = findViewById(R.id.post) ;
 
-//        rating.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                startActivity(new Intent(Home_Page.this, RatingApp.class));
-//            }
-//        });
+        rating.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Home_Page.this, RatingApp.class));
+            }
+        });
         profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -39,12 +39,12 @@ public class Home_Page extends AppCompatActivity {
             }
         });
 
-//        video.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                startActivity(new Intent(Home_Page.this, Youtube_Video_Embedded.class));
-//            }
-//        });
+        video.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Home_Page.this, Youtube_Video_Embedded.class));
+            }
+        });
 
 //        Post.setOnClickListener(new View.OnClickListener() {
 //            @Override

@@ -119,6 +119,9 @@ public class UserProfile_Page extends AppCompatActivity {
                 swipeRefreshLayout.setRefreshing(false);
             }
         });
+
+
+
         // --------------------------------------------------------------------------------------------------------------------------------------
 
         // set user wallpaper to the CircleImageView ----------------------------------------------------------------------------------------------
