@@ -9,16 +9,16 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
-        android:background="@color/white">
+        android:background="@drawable/bg2">
 
 
         <TextView
             android:id="@+id/top_view"
             android:layout_width="match_parent"
-            android:text="SIGN UP"
-            android:textSize="100dp"
-            android:layout_height="160dp"
+            android:text="Welcome"
+            android:textSize="50dp"
+            android:textAlignment="center"
+            android:layout_height="60dp"
             />
 
 
@@ -28,7 +28,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/top_view"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="20dp"
             android:textStyle="bold"
             android:padding="6dp"
             android:text="Full Name"
