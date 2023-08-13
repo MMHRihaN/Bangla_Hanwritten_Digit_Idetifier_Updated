@@ -86,28 +86,28 @@ public class Post_Page extends AppCompatActivity {
     }
     void makeList() {
         Context context = this ;
-        postRecyclerView.setHasFixedSize(true) ;
+        postRecyclerView.setHasFixedSize(true) ;    //
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
         DatabaseReference databaseReference = firebaseDatabase.getReference("Posts");
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {      //
                 postList = new ArrayList<Post>();
                 ArrayList<Post> initial = new ArrayList<Post>() ;
                 for (DataSnapshot postsnap: dataSnapshot.getChildren()) {
                     Post post = postsnap.getValue(Post.class);
                     initial.add(post);
                 }
-                Collections.reverse(initial);
+                Collections.reverse(initial);                   //
                 int cnt = 0 ;
                 for (Post postsnap: initial) {
                     Post post = postsnap ;
-                    if(cnt>=startnumber-1 && cnt<endnumber) {
+                    if(cnt>=startnumber-1 && cnt<endnumber) {               //
                         postList.add(post) ;
                     }
                     cnt ++ ;
                 }
-                postAdapter = new PostAdapter(context,postList) ;
+                postAdapter = new PostAdapter(context,postList) ;               //
                 postRecyclerView.setAdapter(postAdapter) ;
             }
             @Override

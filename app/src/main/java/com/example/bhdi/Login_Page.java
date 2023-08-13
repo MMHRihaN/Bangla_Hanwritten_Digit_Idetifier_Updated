@@ -27,6 +27,7 @@ import android.view.View ;
 import android.widget.Button ;
 import android.widget.CheckBox;
 import android.widget.EditText ;
+import android.widget.ImageView;
 import android.widget.ProgressBar ;
 import android.widget.TextView ;
 import android.widget.Toast ;
@@ -41,13 +42,14 @@ import com.google.firebase.auth.FirebaseAuthInvalidUserException;
 public class Login_Page extends AppCompatActivity {
 
     private EditText editTextLoginEmail,editTextLoginPwd;
+    ImageView g_btn,f_btn;
     CheckBox remeberMe ;
     private ProgressBar progressBar;
     private FirebaseAuth authProfile;
     private  SharedPreferences sharedPreferences ;
     private FirebaseAuth mAuth;
     private static final String TAG = "LoginActivity";
-    TextView register ;
+    TextView register, phone;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,6 +61,10 @@ public class Login_Page extends AppCompatActivity {
         register = findViewById(R.id.register) ;
         remeberMe = findViewById(R.id.remember_me) ;
         authProfile = FirebaseAuth.getInstance();
+
+        phone = findViewById(R.id.btnPhone);
+        g_btn = findViewById(R.id.btnGoogle);
+        f_btn = findViewById(R.id.btnFB);
         //login user
         Button buttonLogin = findViewById(R.id.submitButton);
 
@@ -117,6 +123,24 @@ public class Login_Page extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(Login_Page.this, Register_Page.class));
+            }
+        });
+        g_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(Login_Page.this,"Will be added soon" , Toast.LENGTH_SHORT).show();
+            }
+        });
+        f_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(Login_Page.this,"Will be added soon" , Toast.LENGTH_SHORT).show();
+            }
+        });
+        phone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(Login_Page.this,"Will be added soon" , Toast.LENGTH_SHORT).show();
             }
         });
     }

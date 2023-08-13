@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg1"
     tools:context=".Card">
 
     <androidx.appcompat.widget.Toolbar
@@ -30,15 +31,15 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.5" />
 
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/user_image"
+            <ImageView
+                android:id="@+id/lg"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_marginEnd="20dp"
-                android:src="@drawable/ic_launcher_background"
+                android:src="@drawable/logout"
                 app:layout_constraintBottom_toBottomOf="@+id/title"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/title" />
+                app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -272,7 +273,7 @@
             android:layout_height="wrap_content"
             android:layout_columnSpan="2"
             android:layout_marginTop="20dp"
-            android:text="version 1.0.0"
+            android:text="version 8.0.0"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="16sp" />

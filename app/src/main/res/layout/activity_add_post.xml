@@ -10,7 +10,7 @@
         android:id="@+id/top_view"
         android:layout_width="match_parent"
         android:layout_height="150dp"
-        android:background="@drawable/bg_view" />
+        android:background="@drawable/bg1" />
 
 
     <TextView
@@ -22,14 +22,14 @@
         android:layout_marginLeft="5sp"
         android:layout_marginBottom="60dp"
         android:padding="20sp"
-        android:text="ADD POST"
+        android:text="Share your thought"
         android:textColor="#FAFAFA"
-        android:textSize="40sp"
-        android:textStyle="bold" />
+        android:textSize="23sp"
+        android:textStyle="italic" />
     <com.airbnb.lottie.LottieAnimationView
         android:layout_width="match_parent"
         android:layout_height="140dp"
-        app:lottie_rawRes="@raw/postpage"
+        app:lottie_rawRes="@raw/animation_post"
         app:lottie_autoPlay="true"
         android:layout_toRightOf="@+id/txtWelcome"
         app:lottie_loop="true"

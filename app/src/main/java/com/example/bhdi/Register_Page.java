@@ -70,7 +70,7 @@ public class Register_Page extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_page);
 
-        Toast.makeText(Register_Page.this, "You cann register now", Toast.LENGTH_LONG).show();
+        Toast.makeText(Register_Page.this, "You can register now", Toast.LENGTH_LONG).show();
         progressBar = findViewById(R.id.progressbBar);
         editTextRegisterFullName = findViewById(R.id.editText_register_full_name);
         editTextRegisterEmail = findViewById(R.id.editText_register_email);

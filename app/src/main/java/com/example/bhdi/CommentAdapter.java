@@ -15,7 +15,7 @@ import com.bumptech.glide.Glide;
 import java.util.ArrayList;
 
 public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.MyViewHolder> {
-    Context context ;
+    Context context ;                           //
     ArrayList<Comment> mData ;
     public CommentAdapter(Context context, ArrayList<Comment> mData) {
         this.context = context;
@@ -25,10 +25,10 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.MyViewHo
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View row = LayoutInflater.from(context).inflate(R.layout.comment_listview,parent,false);
-        return new MyViewHolder(row);
+        return new MyViewHolder(row);                                       //
     }
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {                      //
         holder.Content.setText(mData.get(position).getVal());
         holder.username.setText(mData.get(position).getUserRealname());
         holder.datetime.setText(mData.get(position).getDate() + "  " + mData.get(position).getTime() );
@@ -49,11 +49,11 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.MyViewHo
         ImageView userImage ;
         public MyViewHolder(View itemView) {
             super(itemView);
-            Content = itemView.findViewById(R.id.postContent) ;
+            Content = itemView.findViewById(R.id.postContent) ;                 //
             username = itemView.findViewById(R.id.userName) ;
             datetime = itemView.findViewById(R.id.dateTime) ;
             userImage = itemView.findViewById(R.id.showusericon)  ;
-            itemView.setOnClickListener(new View.OnClickListener() {
+            itemView.setOnClickListener(new View.OnClickListener() {                            //
                 @Override
                 public void onClick(View view) {
 //                    Intent postDetailActivity = new Intent(context,PostDetails_Page.class);

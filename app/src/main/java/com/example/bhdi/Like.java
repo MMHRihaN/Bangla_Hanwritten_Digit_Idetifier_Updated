@@ -18,7 +18,7 @@ public class Like {
 
     public void setUserID(String userID) {
         this.userID = userID;
-    }
+    }                   ///
 
     public String getPostID() {
         return postID;

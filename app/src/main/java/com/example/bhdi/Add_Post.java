@@ -44,10 +44,10 @@ public class Add_Post extends AppCompatActivity {
     Button popupAddBtn;
     TextView popupDescription;
     Uri pickedImgUri = null;
-    private static final int REQUESCODE = 2 ;
+    private static final int REQUESCODE = 2 ;                   //
     Dialog popAddPost ;
     FirebaseAuth mAuth;
-    private static final int PReqCode = 2 ;
+    private static final int PReqCode = 2 ;                         //
     FirebaseUser currentUser ;
     CircleImageView userphoto ;
     String userprofilephoto ;
@@ -74,7 +74,7 @@ public class Add_Post extends AppCompatActivity {
             @Override
             public void onSuccess(Uri uri) {
 
-                Glide.with(Add_Post.this)
+                Glide.with(Add_Post.this)                           //
                         .load(uri) // the uri you got from Firebase
                         .circleCrop()
                         .override(600,600)
@@ -103,7 +103,7 @@ public class Add_Post extends AppCompatActivity {
         databaseReference = FirebaseDatabase.getInstance().getReference("users").child("Image");
         databaseReference.child(currentUser.getUid()).addValueEventListener(new ValueEventListener() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
+            public void onDataChange(@NonNull DataSnapshot snapshot) {                      //
                 if(snapshot!=null) {
                     userprofilephoto = snapshot.getValue().toString() ;
                 }else{

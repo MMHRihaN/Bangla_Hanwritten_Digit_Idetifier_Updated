@@ -36,7 +36,7 @@ import java.util.Objects;
 public class PostDetails_Page extends AppCompatActivity {
 
     EditText commentValue;
-    String comment_text = "Nayem" ;
+    String comment_text = "Rihan" ;                                                                                                                                                                 //  String comment_text = "Nayem"
     Button uploadComment ;
     String postID ;
     RecyclerView recyclerView ;
@@ -70,7 +70,7 @@ public class PostDetails_Page extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 comment_text = commentValue.getText().toString() ;
-                if(!comment_text.equals("")) {
+                if(!comment_text.equals("")) {              //
                     CreateComment() ;
                 }
                 else {
@@ -122,7 +122,7 @@ public class PostDetails_Page extends AppCompatActivity {
         DatabaseReference databaseReference = firebaseDatabase.getReference("Comments");
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {                              //
                 commentsList = new ArrayList<Comment>()  ;
                 for (DataSnapshot postsnap: dataSnapshot.getChildren()) {
                     Comment comment1 = postsnap.getValue(Comment.class);
@@ -142,8 +142,8 @@ public class PostDetails_Page extends AppCompatActivity {
 
 
     void CreateComment() {
-        Calendar calendar = Calendar.getInstance() ;
-        int year = calendar.get(Calendar.YEAR) ;
+        Calendar calendar = Calendar.getInstance() ;                            //
+        int year = calendar.get(Calendar.YEAR) ;                                   //
         int month = calendar.get(Calendar.MONTH) ;
         DateFormatSymbols dateFormatSymbols = new DateFormatSymbols() ;
         String monthName = dateFormatSymbols.getMonths()[month] ;
@@ -156,7 +156,7 @@ public class PostDetails_Page extends AppCompatActivity {
         Comment comment1 = new Comment(postID,userRealName,comment_text,commentDate,commentTime , userprofileurl ) ;
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("Comments").push();
-        myRef.setValue(comment1).addOnSuccessListener(new OnSuccessListener<Void>() {
+        myRef.setValue(comment1).addOnSuccessListener(new OnSuccessListener<Void>() {                                   //
             @Override
             public void onSuccess(Void aVoid) {
                 Toast.makeText(PostDetails_Page.this, "Comment Uploaded ! ", Toast.LENGTH_SHORT).show();

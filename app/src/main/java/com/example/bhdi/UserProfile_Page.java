@@ -76,7 +76,7 @@ public class UserProfile_Page extends AppCompatActivity {
         img = findViewById(R.id.image);
         birthday = findViewById(R.id.birthday);
         phone = findViewById(R.id.phone);
-        logout = findViewById(R.id.logout);
+      //  logout = findViewById(R.id.logout);
         gender = findViewById(R.id.gender) ;
         Upload = findViewById(R.id.upload) ;
         UserName = findViewById(R.id.userName) ;
@@ -99,13 +99,13 @@ public class UserProfile_Page extends AppCompatActivity {
                     @Override
                     public void onSuccess(Uri uri) {
 
-                        Glide
+                        Glide               //
                                 .with(UserProfile_Page.this)
                                 .load(uri) // the uri you got from Firebase
                                 .circleCrop()
                                 .override(600,600)
                                 .into(img); //Your imageView variable
-                        Toast.makeText(UserProfile_Page.this, "Success", Toast.LENGTH_SHORT).show();
+                      //  Toast.makeText(UserProfile_Page.this, "Success", Toast.LENGTH_SHORT).show();
                         String userid = firebaseAuth.getCurrentUser().getUid() ;
                         DocumentReference documentReference = firebaseFirestore.collection("users").document(userid) ;
 
@@ -134,7 +134,7 @@ public class UserProfile_Page extends AppCompatActivity {
                         .circleCrop()
                         .override(600,600)
                         .into(img); //Your imageView variable
-                Toast.makeText(UserProfile_Page.this, "Success", Toast.LENGTH_SHORT).show();
+               // Toast.makeText(UserProfile_Page.this, "Success", Toast.LENGTH_SHORT).show();
                 String userid = firebaseAuth.getCurrentUser().getUid() ;
                 DocumentReference documentReference = firebaseFirestore.collection("users").document(userid) ;
             }
@@ -184,7 +184,7 @@ public class UserProfile_Page extends AppCompatActivity {
                                                 .addOnFailureListener(new OnFailureListener() {
                                                     @Override
                                                     public void onFailure(@NonNull Exception e) {
-                                                        Toast.makeText(UserProfile_Page.this, "failed uploaded", Toast.LENGTH_SHORT).show();
+                                                        Toast.makeText(UserProfile_Page.this, "failed to upload", Toast.LENGTH_SHORT).show();
                                                     }
                                                 });
                                     }
@@ -224,19 +224,56 @@ public class UserProfile_Page extends AppCompatActivity {
         });
 
         // for User Logout
-        logout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FirebaseAuth.getInstance().signOut();
-                SharedPreferences sharedPreferences = getSharedPreferences("login", Context.MODE_PRIVATE);
-                SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.remove("isLoggedin");
-                editor.commit();
-                //Toast.makeText(UserProfile_Page.this, "Logged out", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(UserProfile_Page.this, Login_Page.class));
-                finish();
-            }
-        });
+//        logout.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                FirebaseAuth.getInstance().signOut();
+//                SharedPreferences sharedPreferences = getSharedPreferences("login", Context.MODE_PRIVATE);
+//                SharedPreferences.Editor editor = sharedPreferences.edit();
+//                editor.remove("isLoggedin");
+//                editor.commit();
+//                //Toast.makeText(UserProfile_Page.this, "Logged out", Toast.LENGTH_SHORT).show();
+//                startActivity(new Intent(UserProfile_Page.this, Login_Page.class));
+//                finish();
+//            }
+//        });
 
     }
 }
+
+
+////Egula login er xml page theke remove kore nisi... line 181 to 214
+//<androidx.cardview.widget.CardView
+//        android:layout_height="110dp"
+//        android:id="@+id/logout"
+//        android:layout_width="150dp"
+//        app:cardCornerRadius="15dp"
+//        app:cardElevation="12dp"
+//        android:layout_gravity="center"
+//        android:layout_row="0"
+//        android:layout_column="0"
+//        >
+//
+//<LinearLayout
+//                    android:layout_width="match_parent"
+//                            android:layout_height="match_parent"
+//                            android:id="@+id/gotoMap"
+//
+//                            android:layout_marginTop="2dp"
+//
+//                            android:orientation="vertical"  >
+//
+//
+//<TextView
+//                        android:layout_width="wrap_content"
+//                                android:layout_height="wrap_content"
+//                                android:text="Logout"
+//                                android:layout_gravity="center_horizontal"
+//                                android:textSize="30sp"
+//                                android:textStyle="bold"
+//                                android:textColor="@color/black"
+//                                />
+//</LinearLayout>
+//
+//</androidx.cardview.widget.CardView>
+

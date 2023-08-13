@@ -15,7 +15,7 @@
             android:id="@+id/top_view"
             android:layout_width="match_parent"
             android:layout_height="150dp"
-            android:background="@drawable/bg_view" />
+            android:background="@drawable/bg1" />
 
 
         <TextView
@@ -33,7 +33,7 @@
         <com.airbnb.lottie.LottieAnimationView
             android:layout_width="match_parent"
             android:layout_height="140dp"
-            app:lottie_rawRes="@raw/comment"
+            app:lottie_rawRes="@raw/add_comment"
             app:lottie_autoPlay="true"
             android:layout_toRightOf="@+id/txtWelcome"
             app:lottie_loop="true"

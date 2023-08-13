@@ -34,19 +34,19 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
     }
     @NonNull
     @Override
-    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {                               //
 
         View row = LayoutInflater.from(context).inflate(R.layout.post_listview,parent,false);
         return new MyViewHolder(row);
     }
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {                          //
         String postID = mData.get(position).getPostKey() ;
         holder.Content.setText(mData.get(position).getDescription());
         holder.username.setText(mData.get(position).getUserRealname());
         holder.DateTime.setText(mData.get(position).getPostDate() + "   " + mData.get(position).getPostTime());
 
-        if(mData.get(position).getUserprofilephoto()!="NULL"){
+        if(mData.get(position).getUserprofilephoto()!="NULL"){                          //
             Glide.with(holder.showUsericon.getContext())
                     .load(mData.get(position).getUserprofilephoto())
                     .circleCrop()
@@ -67,7 +67,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                        if(testClick == true){
+                        if(testClick == true){                                  //
 
                             if(snapshot.child(postID).hasChild(userID)){
                                 likeRef.child(postID).child(userID).removeValue();
@@ -94,14 +94,14 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 Integer cnt = 0 ;
-                for (DataSnapshot postsnap: dataSnapshot.getChildren()) {
+                for (DataSnapshot postsnap: dataSnapshot.getChildren()) {                           //
                     Comment comment1 = postsnap.getValue(Comment.class);
                     //Toast.makeText(PostDetails_Page.this,postID,Toast.LENGTH_SHORT).show();
                     if(Objects.equals(postID,comment1.getPostID())) {
                         cnt ++ ;
                     }
                 }
-                holder.commentcount.setText(Integer.toString(cnt));
+                holder.commentcount.setText(Integer.toString(cnt));                         //
             }
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
@@ -113,8 +113,8 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
     @Override
     public int getItemCount() {
         return mData.size();
-    }
-    public class MyViewHolder extends RecyclerView.ViewHolder {
+    }                           //
+    public class MyViewHolder extends RecyclerView.ViewHolder {                         //
         TextView tvTitle , Content , username ;
         ImageView showUsericon , showLikeButton , showcomment ;
         TextView likecount , commentcount , DateTime ;

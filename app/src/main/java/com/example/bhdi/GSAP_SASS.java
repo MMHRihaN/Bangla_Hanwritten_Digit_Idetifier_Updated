@@ -43,7 +43,7 @@ public class GSAP_SASS extends AppCompatActivity {
 
     public void doWork(){
         try {
-            Thread.sleep(3000);
+            Thread.sleep(1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
