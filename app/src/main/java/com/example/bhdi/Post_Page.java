@@ -28,7 +28,7 @@ public class Post_Page extends AppCompatActivity {
     CircleImageView UploadPost ;
     ListView listView ;
     Integer pagenumber = 1 ;
-    Integer startnumber = 1 , endnumber = 5 ;
+    Integer startnumber = 1 , endnumber = 5, lastpage = 1 ;
     Button previousPage , nextPage  ;
     TextView pageNoView ;
     RecyclerView postRecyclerView ;
@@ -56,6 +56,27 @@ public class Post_Page extends AppCompatActivity {
         });
         // for first time
         makeList();
+
+        DatabaseReference databaseRef = FirebaseDatabase.getInstance().getReference("Posts");
+
+        databaseRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                long rowCountLong = dataSnapshot.getChildrenCount();
+                int rowCount = (int) rowCountLong;
+                lastpage = (int) Math.ceil((double) rowCount / 5);
+                //lastpage = (rowCount/5);
+               // String rowCountText = "Number of rows: " + rowCount;
+                //Toast.makeText(getApplicationContext(), rowCountText, Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                // Handle any errors
+            }
+        });
+
+
         previousPage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -75,12 +96,15 @@ public class Post_Page extends AppCompatActivity {
         nextPage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                pagenumber ++ ;
+                if(pagenumber==lastpage) {
+                    Toast.makeText(Post_Page.this,"No next Page Found !",Toast.LENGTH_SHORT).show();
+                }
+                else {pagenumber ++ ;
                 String s = Integer.toString(pagenumber) ;
                 endnumber = pagenumber*5 ;
                 startnumber = endnumber - 4 ;
                 pageNoView.setText(s);
-                makeList() ;
+                makeList() ; }
             }
         });
     }

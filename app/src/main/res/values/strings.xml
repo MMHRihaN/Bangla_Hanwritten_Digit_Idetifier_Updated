@@ -2,6 +2,7 @@
     <string name="app_name">BHDI</string>
     <string name="title_activity_maps">MapsActivity</string>
     <string name="user_display_picture">Picture</string>
+    <string name="banner_adunit_id">ca-app-pub-3940256099942544/6300978111</string>
 
 
     <string-array name="array_BD_states">

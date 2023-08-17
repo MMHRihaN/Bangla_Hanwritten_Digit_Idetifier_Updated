@@ -47,6 +47,7 @@
             android:layout_below="@+id/top_view"
             android:hint="Write Comment "
             android:textSize="20dp"
+            android:background="@android:color/transparent"
             android:textStyle="bold" />
 
 

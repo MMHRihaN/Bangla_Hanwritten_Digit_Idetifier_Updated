@@ -45,11 +45,12 @@
 
                 <TextView
                     android:id="@+id/upload"
-                    android:layout_width="40dp"
+                    android:layout_width="80dp"
                     android:layout_height="40dp"
                     android:layout_below="@id/image"
                     android:layout_marginTop="5dp"
                     android:background="@color/white"
+                    android:text="Upload"
                     android:layout_marginLeft="40dp"
                     android:textSize="20dp" />
 
